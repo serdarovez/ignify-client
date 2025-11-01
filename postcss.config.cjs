@@ -1,11 +1,7 @@
 module.exports = {
   plugins: {
-    tailwindcss: {
-      content: [
-        "./index.html",
-        "./src/**/*.{js,ts,jsx,tsx}",
-      ],
-    },
+    // Use the new PostCSS plugin package for Tailwind
+    '@tailwindcss/postcss': {},
     autoprefixer: {},
   },
 }
