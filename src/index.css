@@ -1,8 +1,65 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Import Inter from Google Fonts for site-wide use (fallbacks included).
+   If you have a local copy of Inter you can remove the @import and use @font-face instead. */
 
-body{
-  margin: 0;
-  @apply bg-[#0d0d0d]
+@import "tailwindcss";
+
+@font-face {
+  font-family: SF-Pro-Display-Thin;
+  src: url("/src/assets/SF-Pro-Display-Regular.otf") format("woff2");
+  font-style: Condensed Bold;
+}
+@font-face {
+  font-family: SF-Pro-Display-Bold;
+  src: url("/src/assets/SF-Pro-Display-Bold.otf") format("woff2");
+}
+@font-face {
+  font-family: Inter;
+  src: url("/src/assets/Inter-VariableFont_opsz\,wght.ttf") format("woff2");
+}
+@font-face {
+  font-family: BricolageGrotesque;
+  src: url("/src/assets/BricolageGrotesque-VariableFont_opsz\,wdth\,wght.ttf")
+    format("woff2");
+}
+/* Utility font classes */
+.font-inter {
+  font-family: "Inter";
+}
+.font-sf-thin {
+  font-family: "SF-Pro-Display-Thin";
+}
+.font-sf-bold {
+  font-family: "SF-Pro-Display-Bold";
+  font-weight: 760;
+}
+.font-bg {
+  font-family: "BricolageGrotesque";
+}
+
+body {
+  font-family: "Inter";
+}
+.send {
+  position: relative;
+  overflow: hidden;
+  background-color: #000000; /* fallback if image fails */
+}
+
+.send::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/src/assets/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure children render above the decorative background */
+.send > * {
+  position: relative;
+  z-index: 1;
 }
